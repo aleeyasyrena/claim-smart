@@ -1,0 +1,274 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #C2185B;
+  --primary-strong: #A3134C;
+  --primary-ink: #880E4F;
+  --primary-soft: #FDF0F6;
+  --primary-soft-2: #FADCE9;
+  --primary-border: #F5B8D2;
+  --on-primary: #FFFFFF;
+  --primary-bright: #F472B6;
+
+  --secondary: #0D1117;
+  --on-secondary: #FFFFFF;
+
+  --neutral: #FFFFFF;
+  --surface: #FFFFFF;
+  --surface-2: #FBFCFD;
+  --surface-muted: #F7F8FA;
+  --surface-sunken: #F2F4F7;
+
+  --on-surface: #363C47;
+  --on-surface-strong: #0D1117;
+  --on-surface-variant: #5B6472;
+  --on-surface-muted: #697382;
+
+  --outline: #E7EAEF;
+  --outline-strong: #D6DBE3;
+  --error: #D61F26;
+  --on-error: #FFFFFF;
+
+  --shadow-card: 0 1px 3px rgba(13, 17, 23, 0.05), 0 6px 16px -10px rgba(13, 17, 23, 0.14);
+  --shadow-raised: 0 2px 6px rgba(13, 17, 23, 0.04), 0 18px 44px -22px rgba(13, 17, 23, 0.22);
+  --shadow-float: 0 4px 10px rgba(13, 17, 23, 0.05), 0 34px 70px -30px rgba(13, 17, 23, 0.28);
+  --shadow-input: 0 1px 2px rgba(13, 17, 23, 0.04);
+}
+
+@theme {
+  --font-sans: var(--font-sans), "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+
+  --color-primary: var(--primary);
+  --color-primary-strong: var(--primary-strong);
+  --color-primary-ink: var(--primary-ink);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-soft-2: var(--primary-soft-2);
+  --color-primary-border: var(--primary-border);
+  --color-on-primary: var(--on-primary);
+  --color-primary-bright: var(--primary-bright);
+
+  --color-secondary: var(--secondary);
+  --color-on-secondary: var(--on-secondary);
+
+  --color-neutral: var(--neutral);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-sunken: var(--surface-sunken);
+
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-strong: var(--on-surface-strong);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-on-surface-muted: var(--on-surface-muted);
+
+  --color-outline: var(--outline);
+  --color-outline-strong: var(--outline-strong);
+  --color-error: var(--error);
+  --color-on-error: var(--on-error);
+
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --radius-full: 9999px;
+}
+
+/* Base styles matching DESIGN.md */
+html {
+  font-family: var(--font-sans);
+  background-color: var(--neutral);
+  color: var(--on-surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-size: 17px;
+  line-height: 1.72;
+  font-weight: 400;
+  color: var(--on-surface);
+  background-color: var(--neutral);
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  color: var(--on-surface-strong);
+}
+
+::selection {
+  background-color: var(--primary-soft-2);
+  color: var(--primary-ink);
+}
+
+/* Elevation utilities */
+.shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+.shadow-raised {
+  box-shadow: var(--shadow-raised);
+}
+
+.shadow-float {
+  box-shadow: var(--shadow-float);
+}
+
+.shadow-input {
+  box-shadow: var(--shadow-input);
+}
+
+/* Fluid typography clamps as per DESIGN.md */
+.headline-display {
+  font-size: clamp(36px, 5.5vw, 60px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+}
+
+.headline-lg {
+  font-size: clamp(31px, 4.2vw, 47px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+}
+
+.headline-md {
+  font-size: clamp(23px, 3vw, 29px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+}
+
+.stat-number {
+  font-size: clamp(44px, 5vw, 52px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+.body-lead {
+  font-size: clamp(17.5px, 2.2vw, 20px);
+  line-height: 1.72;
+  font-weight: 400;
+  color: var(--on-surface-variant);
+  max-width: 62ch;
+}
+
+.body-md {
+  font-size: 17px;
+  line-height: 1.72;
+  font-weight: 400;
+}
+
+.body-sm {
+  font-size: 13.5px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.label-lg {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.label-md {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.label-sm {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Scanline texture */
+.scanline-texture {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.04) 0px,
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+
+/* Smooth motion and reveal animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Ticker marquee animation: 46s right-to-left */
+@keyframes tickerSlide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: tickerSlide 46s linear infinite;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .ticker-track {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Print optimizations */
+@media print {
+  header, .ticker-wrap, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt !important;
+  }
+  .page-break {
+    page-break-before: always;
+  }
+}
